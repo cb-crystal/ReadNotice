@@ -29,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //隐藏系统标题栏
         ActionBar actionBar=getSupportActionBar();
         actionBar.hide();
         mySql=new MySql(MainActivity.this,"notices",null,1);
         db=mySql.getWritableDatabase();
-
+        //初始化组件
         initViews();
+        //初始化数据
         initDatas();
 
     }
